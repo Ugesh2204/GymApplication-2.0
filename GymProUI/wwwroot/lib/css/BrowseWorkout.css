@@ -1,0 +1,20 @@
+﻿.profile-border{
+    border:2px solid #0094ff;
+    padding:1rem;
+    margin-top:1.5rem;
+    margin-bottom:1rem;
+}
+
+.circular {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+
+.circular img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,89 @@
+﻿
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GymProApp</title>
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/lib/Js/bootstrap.min.js"></script>
+    <script src="~/lib/Js/jquery.min.js"></script>
+    <script src="~/lib/Js/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/Js/jquery.validate.min.js"></script>
+    <script src="~/lib/Js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/Js/popper.min.js"></script>
+    <script src="~/lib/ckeditor/ckeditor.js"></script>
+    <link href="~/lib/css/BrowseWorkout.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">GymPro</a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor02" aria-label="Toggle navigation" type="button" data-target="#navbarColor02" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Goals" asp-action="Index"> Goals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="ApproveWorkOuts" asp-action="Index"> Approve/Reject worksout</a>
+                            </li>
+                        }
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="SubmitWorks" asp-action="CreateWorkout">Submit WorkOuts</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="BrowseWorkout" asp-action="Index">View WorkOuts</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Welcome @User.Identity.Name</a>
+                        </li>
+
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">LogIn</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+    </header>
+    <section>
+        @RenderBody()
+    </section>
+    <footer>All Right Reserved GymPro</footer>
+</body>
+</html>

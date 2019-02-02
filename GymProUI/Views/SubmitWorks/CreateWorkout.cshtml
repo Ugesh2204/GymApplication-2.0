@@ -1,0 +1,87 @@
+﻿@model GymProUI.ViewModel.CreateWorkoutViewModel
+
+@{
+    ViewData["Title"] = "CreateUrl";
+}
+
+
+
+
+
+<div class="container">
+    <h4>Create Your WorkOut</h4>
+
+    <hr />
+
+    <form asp-action="CreateWorkout">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label asp-for="GoalId" class="control-label"></label>
+
+                    <select asp-for="GoalId" asp-items="@(new SelectList(ViewBag.Goals,"GoalId","GoalName"))" class="form-control">
+                        <option>
+                            Select Your Goal
+                        </option>
+                    </select>
+                    <span asp-validation-for="GoalId" class="text-danger"></span>
+                </div>
+
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Weight" class="control-label"></label>
+                    <input asp-for="Weight" class="form-control" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Height" class="control-label"></label>
+                    <input asp-for="Height" class="form-control" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BMI" class="control-label"></label>
+                    <input asp-for="BMI" class="form-control" />
+                    <span asp-validation-for="BMI" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="WorkoutDescription" class="control-label"></label>
+                    @*<input asp-for="WorkoutDescription" class="form-control" />*@
+                    @*<span asp-validation-for="WorkoutDescription" class="text-danger"></span>*@
+
+                    @Html.TextAreaFor(model => model.WorkoutDescription, new { @id = "WorkoutDescription", @class = "form-control", @rows = "50" })
+                    <script>CKEDITOR.replace(WorkoutDescription)</script>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+   
+
+
+
+
+

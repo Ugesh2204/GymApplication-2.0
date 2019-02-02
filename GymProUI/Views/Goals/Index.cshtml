@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GPBOL.Goal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container">
+    <h2>Index</h2>
+
+   
+
+    <p>
+        <a asp-action="Insert" asp-controller="Goals" class="btn btn-link"> Add New Goals</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoalId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoalName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoalName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { GoalId = item.GoalId }) |
+                        @Html.ActionLink("Details", "Details", new { GoalId = item.GoalId }) |
+                        @Html.ActionLink("Delete", "Delete", new { GoalId = item.GoalId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

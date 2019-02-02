@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\GymProUI",
+    "\\GymProUI\\node_modules\\bootstrap\\dist",
+    "\\GymProUI\\node_modules\\bootstrap\\dist\\css",
+    "\\GymProUI\\node_modules\\popper.js\\dist",
+    "\\GymProUI\\Views",
+    "\\GymProUI\\Views\\Shared",
+    "\\GymProUI\\wwwroot\\lib",
+    "\\GymProUI\\wwwroot\\lib\\css"
+  ],
+  "SelectedNode": "\\GymProUI\\Views\\Shared\\_Layout.cshtml",
+  "PreviewInSolutionExplorer": false
+}

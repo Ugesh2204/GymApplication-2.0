@@ -1,0 +1,106 @@
+﻿@model IEnumerable<GymProUI.ViewModel.BrowseWorkoutViewmodel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+
+
+
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BMI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkoutDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>*@
+
+
+<div class="container">
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="row profile-border">
+            <div class="col-md-3"> <img src="~/lib/img/profileOne.jpg" class="circular" /></div>
+            <div class="col-md-5">
+                <div class="row">
+                    <ul>
+                        <li><p><h3>Name:</h3> @Html.DisplayFor(modelItem => item.UserName)</p></li>
+                        <li><h3>Weight</h3> @Html.DisplayFor(modelItem => item.Weight)</li>
+                        <li><h3>Height</h3> @Html.DisplayFor(modelItem => item.Height)</li>
+                        <li><h3>BMI</h3>  @Html.DisplayFor(modelItem => item.BMI)</li>
+                        <li><h3>Goals</h3>@Html.DisplayFor(modelItem => item.GoalName)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h3> @Html.DisplayNameFor(model => model.WorkoutDescription)</h3>
+                @Html.Raw(item.WorkoutDescription)
+            </div>
+        </div>
+
+
+
+
+        @*<tr>
+                <td>
+                    <img src="~/lib/img/profileOne.jpg" class="circular" />
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Height)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BMI)
+                </td>
+                <td>
+
+
+                    @Html.Raw(item.WorkoutDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GoalName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+
+            </tr>*@
+    }
+   
+
+</div>

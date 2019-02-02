@@ -1,0 +1,126 @@
+﻿@model GymProUI.ViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Link Hub Portal</title>
+    <script src="~/lib/js/jquery.min.js"></script>
+    <script src="~/lib/js/bootstrap.min.js"></script>
+    <script src="~/lib/js/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/js/popper.min.js"></script>
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/css/MyStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+
+
+</head>
+<body>
+
+
+    <div class="model-dialog text-center">
+        <div class="col-sm-9 col-md-5 col-lg-5 main-section">
+            <div class="model-content">
+                <h2>Register Your Account </h2>
+                <div class="col-12 form-input spaceUp">
+                    <form asp-action="Register">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input asp-for="UserName" type="text" class="form-control" placeholder="Enter UserName" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Email" class="form-control" placeholder="Enter Your Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Password" type="text" class="form-control" placeholder="Enter Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                           
+                            <input asp-for="ConfirmPassword" type="text" class="form-control"  placeholder="Confirm Password"  />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Register</button>
+
+                  
+                       
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*-----------------------
+<h2>Register</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+

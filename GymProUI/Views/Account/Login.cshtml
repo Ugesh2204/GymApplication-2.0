@@ -1,0 +1,84 @@
+﻿@model GymProUI.ViewModel.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Link Hub Portal</title>
+    <script src="~/lib/js/jquery.min.js"></script>
+    <script src="~/lib/js/bootstrap.min.js"></script>
+    <script src="~/lib/js/jquery.validate.min.js"></script>
+    <script src="~/lib/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/js/popper.min.js"></script>
+    <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/css/MyStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+
+
+</head>
+<body>
+
+
+    <div class="model-dialog text-center">
+        <div class="col-sm-9 col-md-5 col-lg-5 main-section">
+            <div class="model-content">
+
+                <div class="col-12 user-img">
+                    <img src="~/lib/img/face.png" />
+                </div>
+
+                <div class="col-12 form-input">
+                    <form asp-action="Login">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input asp-for="UserName" type="text" class="form-control" placeholder="Enter UserName" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Login</button>
+
+                        <div class="col-12 forgot">
+                            <a href="#">Forgot Password</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 forgot">
+                                <div class="checkbox">
+                                    <label>
+                                        <input asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6 forgot">
+
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
