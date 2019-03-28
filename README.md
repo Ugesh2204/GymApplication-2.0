@@ -1,6 +1,6 @@
 # GymApplication-2.0
 Application Built on dotnet core 2.0
-
+xxBugfixedxx
 Brief Descriptions of what the application can do.
 
 1. Implementing Authentication and Authorization ( Register &  Login and Logout) 
